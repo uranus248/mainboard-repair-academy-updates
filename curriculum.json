@@ -1,0 +1,2576 @@
+{
+  "version": "2.8.0",
+  "updated": "2026-10-30",
+  "modules": [
+    "Điện tử căn bản",
+    "Schematic & Boardview",
+    "Mainboard laptop",
+    "Chẩn đoán laptop",
+    "Mainboard điện thoại",
+    "Thực hành chuyên nghiệp"
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "module": 0,
+      "title": "Điện áp, dòng điện, điện trở",
+      "body": "Điện áp là chênh lệch điện thế giữa hai điểm, đo bằng volt (V). Dòng điện là tốc độ dịch chuyển điện tích, đo bằng ampere (A). Điện trở biểu thị mức cản dòng, đo bằng ohm (Ω). Trên laptop, adapter có thể cấp 19–20V nhưng các rail nội bộ thường có 5V, 3.3V và các mức thấp hơn. Không kết luận hỏng IC chỉ vì đo được 0V: rail có thể đang tắt theo trình tự nguồn.\n\nVí dụ: điện trở 1kΩ nối với nguồn DC 5V lý tưởng có dòng I=5/1000=0.005A (5mA). Khi đo điện áp, que đo phải đặt song song với hai điểm cần đo.",
+      "practice": "Dùng đồng hồ đo pin AA còn nguyên vẹn ở thang V DC. Ghi lại cực tính, điện áp đo và so sánh với nhãn 1.5V. Chỉ thực hành với pin AA và điện trở rời, không đo trên mạch có điện khi chưa được hướng dẫn.",
+      "question": "Điện trở 1 kΩ đặt dưới 5V thì dòng điện bằng bao nhiêu?",
+      "options": [
+        "5mA",
+        "5A",
+        "0,5A",
+        "50mA"
+      ],
+      "answer": 0,
+      "explain": "I=V/R=5/1000=0,005A=5mA.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 2,
+      "module": 0,
+      "title": "Định luật Ohm và công suất",
+      "body": "Định luật Ohm: V=I×R, I=V/R, R=V/I. Công suất điện: P=V×I; với điện trở thuần có P=I²R=V²/R. Chú ý điện trở có giới hạn công suất: vượt mức sẽ gây nóng và hỏng.\n\nVí dụ: điện trở 100Ω chịu 5V, dòng 50mA và công suất 0.25W. Nên có biên an toàn thay vì chọn điện trở đúng sát mức định danh. Công thức Ohm không thay thế việc đọc datasheet của IC và linh kiện phi tuyến.",
+      "practice": "Tính bằng giấy: R=220Ω, V=3.3V; tính I và P. Dùng công cụ tính trên máy đối chiếu kết quả. Không lắp mạch có nguồn điện lưới.",
+      "question": "Điện trở 100 Ω chịu 2V có công suất bao nhiêu?",
+      "options": [
+        "0,04W",
+        "2W",
+        "4W",
+        "0,4W"
+      ],
+      "answer": 0,
+      "explain": "P=V²/R=4/100=0,04W.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 3,
+      "module": 0,
+      "title": "Tụ điện và tụ SMD",
+      "body": "Tụ điện lưu trữ điện tích, đơn vị F, µF, nF, pF. Tụ gốm MLCC SMD thường dùng lọc nhiễu, bypass/decoupling sát IC. Tụ điện phân có cực tính; tụ MLCC thường không phân cực. Trị số điện dung thực của MLCC có thể giảm đáng kể dưới điện áp DC bias, phụ thuộc vật liệu và kích thước.\n\nKhi kiểm tra tụ trên mainboard, số đo điện trở thấp giữa rail và GND chưa đủ để kết luận tụ chập: nhiều rail CPU/GPU có trở kháng thấp tự nhiên. Đọc sơ đồ và đối chiếu rail là cần thiết.",
+      "practice": "Quan sát tụ trên bo mạch bỏ nguồn bằng kính lúp. Phân biệt tụ gốm SMD và tụ điện phân. Chỉ đo tụ đã tháo rời nếu có hướng dẫn và dụng cụ phù hợp; không chọc thủng hoặc gia nhiệt pin.",
+      "question": "Tác dụng phổ biến của tụ decoupling là gì?",
+      "options": [
+        "Lọc nhiễu nguồn",
+        "Lưu mật khẩu",
+        "Tăng tốc CPU",
+        "Thay BIOS"
+      ],
+      "answer": 0,
+      "explain": "Tụ decoupling giúp giảm nhiễu và biến thiên nguồn cục bộ.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 4,
+      "module": 0,
+      "title": "Diode và diode bảo vệ",
+      "body": "Diode dẫn chủ yếu theo một chiều. Diode chỉnh lưu, Schottky, TVS và Zener có chức năng khác nhau. TVS dùng hạn chế xung quá áp trên các đường tín hiệu/nguồn khi được thiết kế phù hợp.\n\nChế độ diode của đồng hồ thường hiển thị sụt áp thuận; trị số phụ thuộc loại diode và dòng thử. Kết quả đo ngay trên bo có thể bị ảnh hưởng bởi các nhánh song song. Không mặc định tất cả diode tốt đều có sụt áp 0.7V.",
+      "practice": "Dùng diode rời và đồng hồ ở chế độ diode; thử hai chiều, ghi lại hiển thị. Không dùng nguồn DC để thử diode chưa biết loại.",
+      "question": "TVS thường có vai trò gì?",
+      "options": [
+        "Bảo vệ quá áp xung",
+        "Tăng RAM",
+        "Tạo Wi-Fi",
+        "Lưu firmware"
+      ],
+      "answer": 0,
+      "explain": "TVS được dùng để kẹp các xung điện áp vượt ngưỡng.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 5,
+      "module": 0,
+      "title": "Transistor BJT và MOSFET",
+      "body": "MOSFET là linh kiện bán dẫn điều khiển dòng qua điện trường, có chân Gate, Drain, Source. Laptop dùng MOSFET trong mạch bảo vệ đầu vào, mạch sạc và nguồn buck. N-channel và P-channel có cách điều khiển khác nhau; body diode ảnh hưởng đến kết quả đo.\n\nKhông đánh giá MOSFET chỉ bằng một phép đo thông mạch. Cần nhận diện đúng chân từ datasheet, xem điện áp VGS và cấu trúc mạch xung quanh. MOSFET công suất có thể hỏng chập D-S nhưng phép đo trong mạch cần thận trọng.",
+      "practice": "Quan sát sơ đồ chân MOSFET mẫu trong datasheet và vẽ lại G/D/S. Không kích gate trên mainboard thật bằng nguồn ngoài.",
+      "question": "MOSFET được điều khiển chủ yếu bởi đại lượng nào?",
+      "options": [
+        "Điện áp gate-source",
+        "Dung lượng SSD",
+        "Tần số màn hình",
+        "Độ sáng LED"
+      ],
+      "answer": 0,
+      "explain": "VGS là điện áp điều khiển kênh dẫn MOSFET.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 6,
+      "module": 0,
+      "title": "Cuộn cảm và nguồn xung",
+      "body": "Nguồn buck chuyển đổi DC xuống DC bằng quá trình đóng cắt MOSFET, cuộn cảm, tụ và IC điều khiển. Nguồn boost có thể tăng điện áp. Các rail laptop hoạt động theo trạng thái ngủ, khởi động và vận hành, không phải lúc nào cũng bật.\n\nĐo rail phải xác định điểm GND, trạng thái bật/tắt, tín hiệu EN và điện áp đầu vào theo sơ đồ. Cuộn cảm trên rail công suất thường có điện trở DC thấp, không đồng nghĩa cuộn cảm bị chập.",
+      "practice": "Trên sơ đồ khối giấy, đánh dấu VIN, MOSFET, cuộn cảm, tụ lọc và VOUT. Giải thích tại sao đầu ra buck thấp hơn đầu vào mà không cần dùng điện trở nối tiếp lớn.",
+      "question": "Cuộn cảm trong mạch buck chủ yếu giúp gì?",
+      "options": [
+        "Tích trữ năng lượng từ trường",
+        "Lưu BIOS",
+        "Kết nối Wi-Fi",
+        "Đo nhiệt độ"
+      ],
+      "answer": 0,
+      "explain": "Cuộn cảm lưu trữ và chuyển năng lượng trong chu kỳ đóng cắt.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 7,
+      "module": 0,
+      "title": "IC và datasheet",
+      "body": "IC có thể chứa mạch nguồn, logic, điều khiển sạc, EC hoặc giao tiếp. Datasheet mô tả pinout, absolute maximum ratings, recommended operating conditions, timing và application circuit. Absolute maximum ratings KHÔNG phải điều kiện vận hành thường xuyên.\n\nKhi tìm linh kiện thay thế, cần so sánh mã đầy đủ, package, pinout, điện áp, giao tiếp và revision; tên gần giống chưa chắc tương thích.",
+      "practice": "Tìm datasheet chính hãng của một IC logic phổ thông (ví dụ 74HC00). Ghi số chân, VCC, GND, khoảng điện áp hoạt động và phân biệt operating range với absolute maximum.",
+      "question": "Khi gặp lỗi trên mainboard, cách tiếp cận nào đáng tin cậy nhất?",
+      "options": [
+        "Đo kiểm và đối chiếu tài liệu đúng model",
+        "Thay IC bất kỳ",
+        "Tăng điện áp thử",
+        "Chập thử các chân"
+      ],
+      "answer": 0,
+      "explain": "Cần khoanh vùng bằng đo kiểm an toàn và tài liệu đúng model.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 8,
+      "module": 0,
+      "title": "Đồng hồ vạn năng",
+      "body": "Đồng hồ vạn năng (DMM) thường có V DC/AC, Ω, diode, continuity. Đo điện áp mắc song song; đo dòng yêu cầu mắc nối tiếp đúng cổng và thang, nên không thực hiện trên mainboard nếu chưa được đào tạo. Chế độ Ω/continuity chỉ dùng khi đã ngắt nguồn và xả năng lượng theo quy trình.\n\nÂm báo thông mạch phụ thuộc ngưỡng của từng đồng hồ; tiếng bíp không chứng minh linh kiện chập. Đo trở kháng thấp trên rail cần đối chiếu sơ đồ, nhiệt độ và mẫu máy.",
+      "practice": "Dùng pin AA đo V DC; dùng điện trở rời đo Ω. Trước mỗi phép đo kiểm tra vị trí que cắm, thang đo và trạng thái cấp nguồn.",
+      "question": "Khi gặp lỗi trên mainboard, cách tiếp cận nào đáng tin cậy nhất?",
+      "options": [
+        "Đo kiểm và đối chiếu tài liệu đúng model",
+        "Thay IC bất kỳ",
+        "Tăng điện áp thử",
+        "Chập thử các chân"
+      ],
+      "answer": 0,
+      "explain": "Cần khoanh vùng bằng đo kiểm an toàn và tài liệu đúng model.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 9,
+      "module": 0,
+      "title": "Nguồn DC phòng thí nghiệm",
+      "body": "Nguồn DC phòng thí nghiệm cho phép đặt giới hạn điện áp và dòng. Chế độ CV giữ điện áp khi tải cho phép; CC giới hạn dòng khi đạt ngưỡng. Mức dòng hiển thị không trực tiếp xác định IC hỏng.\n\nKhi dùng cho bo mạch, việc chọn điện áp và cực tính phải dựa trên tài liệu thiết bị. Không tự bơm áp vào rail laptop/điện thoại hoặc pin lithium: sai điện áp có thể phá hủy IC và gây nguy hiểm.",
+      "practice": "Thực hành mô phỏng bằng giấy: nguồn đặt 5V, giới hạn 0.2A, tải 100Ω; dự đoán dòng 0.05A và trạng thái CV. Không đấu nguồn vào mainboard.",
+      "question": "Khi gặp lỗi trên mainboard, cách tiếp cận nào đáng tin cậy nhất?",
+      "options": [
+        "Đo kiểm và đối chiếu tài liệu đúng model",
+        "Thay IC bất kỳ",
+        "Tăng điện áp thử",
+        "Chập thử các chân"
+      ],
+      "answer": 0,
+      "explain": "Cần khoanh vùng bằng đo kiểm an toàn và tài liệu đúng model.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 10,
+      "module": 0,
+      "title": "Máy hiện sóng cơ bản",
+      "body": "Máy hiện sóng đo dạng sóng theo thời gian; các khái niệm cơ bản gồm biên độ, tần số, chu kỳ, duty cycle, trigger và bandwidth. Đầu dò x10 giảm tải mạch so với x1 trong nhiều tình huống nhưng phải bù đầu dò và cấu hình đúng.\n\nKẹp mass của nhiều máy hiện sóng để bàn nối với đất bảo vệ; kẹp sai vị trí có thể gây chập. Không đo trực tiếp phía sơ cấp adapter/nguồn điện lưới.",
+      "practice": "Quan sát hình sóng vuông mẫu trong tài liệu máy hiện sóng, tính chu kỳ với f=1kHz (T=1ms). Chỉ dùng tín hiệu hiệu chuẩn của máy khi có người hướng dẫn.",
+      "question": "Khi gặp lỗi trên mainboard, cách tiếp cận nào đáng tin cậy nhất?",
+      "options": [
+        "Đo kiểm và đối chiếu tài liệu đúng model",
+        "Thay IC bất kỳ",
+        "Tăng điện áp thử",
+        "Chập thử các chân"
+      ],
+      "answer": 0,
+      "explain": "Cần khoanh vùng bằng đo kiểm an toàn và tài liệu đúng model.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 11,
+      "module": 0,
+      "title": "Hàn SMD và ESD",
+      "body": "ESD (phóng tĩnh điện) có thể gây hỏng IC mà không để lại dấu vết. Khi thao tác với bo mạch cần mặt bàn và quy trình ESD phù hợp, ngắt nguồn, bảo quản linh kiện đúng cách. Hàn SMD cần kiểm soát nhiệt, thời gian tiếp xúc, thông gió và sử dụng kính bảo hộ.\n\nNhiệt quá cao có thể bong pad, hỏng IC, làm biến dạng đầu nối và gây nguy hiểm với pin lithium. Không khò main điện thoại khi pin còn kết nối.",
+      "practice": "Quan sát bo mạch phế liệu không gắn pin, xác định resistor/capacitor/IC và vẽ sơ đồ vị trí. Việc hàn khò chỉ thực hiện tại lớp thực hành có giám sát.",
+      "question": "Khi gặp lỗi trên mainboard, cách tiếp cận nào đáng tin cậy nhất?",
+      "options": [
+        "Đo kiểm và đối chiếu tài liệu đúng model",
+        "Thay IC bất kỳ",
+        "Tăng điện áp thử",
+        "Chập thử các chân"
+      ],
+      "answer": 0,
+      "explain": "Cần khoanh vùng bằng đo kiểm an toàn và tài liệu đúng model.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 12,
+      "module": 0,
+      "title": "Đọc mã linh kiện và tổng ôn",
+      "body": "Mã SMD không phải lúc nào cũng duy nhất: cùng ký hiệu in mặt có thể tương ứng nhiều linh kiện. Cần phối hợp package, vị trí trên mạch, schematic, boardview và datasheet. Điện trở 3 chữ số: 103 thường là 10kΩ; 472 là 4.7kΩ, nhưng nhiều điện trở SMD không có mã in.\n\nQuy trình tổng ôn: xác định triệu chứng → kiểm tra nguồn/ngoại quan → thu thập sơ đồ → đo kiểm có giả thuyết → ghi kết quả → kiểm chứng. Không thay IC theo phỏng đoán.",
+      "practice": "Tạo bảng 5 linh kiện trên một bo mạch bỏ nguồn: vị trí, ký hiệu, chức năng dự kiến, cách xác minh. Hoàn thành bảng trước khi chuyển sang học phần đọc schematic.",
+      "question": "Khi gặp lỗi trên mainboard, cách tiếp cận nào đáng tin cậy nhất?",
+      "options": [
+        "Đo kiểm và đối chiếu tài liệu đúng model",
+        "Thay IC bất kỳ",
+        "Tăng điện áp thử",
+        "Chập thử các chân"
+      ],
+      "answer": 0,
+      "explain": "Cần khoanh vùng bằng đo kiểm an toàn và tài liệu đúng model.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 13,
+      "module": 1,
+      "title": "Ký hiệu sơ đồ nguyên lý",
+      "body": "Schematic là sơ đồ kết nối điện, không phải ảnh bố trí vật lý. R (điện trở), C (tụ), L (cuộn cảm), D (diode), Q (transistor/MOSFET), U (IC), J/CN (đầu nối), F (cầu chì) là tiền tố thường gặp nhưng quy ước có thể khác theo hãng. Chân số 1 của IC trên sơ đồ phải đối chiếu pinout và dấu định hướng thực tế. Một ký hiệu nguồn có thể là nhãn net, không phải nguồn cấp riêng. Ví dụ R120 10k nối net EC_RST# với +3V3_AUX có thể đóng vai trò kéo lên; ký hiệu # thường biểu thị active-low nhưng cần xác minh theo tài liệu thiết kế.",
+      "practice": "Trên sơ đồ mẫu được cấp phép hoặc tự vẽ, tìm 3 điện trở, 2 tụ và 1 IC; lập bảng designator, giá trị, số chân và tên net. Không tháo bo mạch có pin đang kết nối.",
+      "question": "Chữ U thường biểu thị loại linh kiện nào?",
+      "options": [
+        "IC",
+        "Tụ điện",
+        "Cuộn cảm",
+        "Đầu nối"
+      ],
+      "answer": 0,
+      "explain": "U thường là designator cho IC, nhưng luôn kiểm tra quy ước sơ đồ.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 14,
+      "module": 1,
+      "title": "Net, GND và rail nguồn",
+      "body": "Net là nhóm các chân được nối điện với nhau theo sơ đồ. GND là điểm tham chiếu 0V trong mạch, không nhất thiết đồng nghĩa dây tiếp đất bảo vệ. Rail là đường cấp nguồn như +3V3_ALW, +5V_S0, VCORE; tên rail và thời điểm hoạt động tùy thiết kế. Một net có thể xuất hiện ở nhiều trang schematic qua nhãn kết nối. Khi rail đo 0V, phải kiểm tra điều kiện enable, trạng thái máy và sơ đồ trình tự nguồn trước khi kết luận chập/hỏng.",
+      "practice": "Trên bản schematic mẫu, tô cùng màu các nhãn +3V3, GND và EN. Đếm số điểm cùng net; chỉ thực hiện trên tài liệu, không cấp nguồn bo mạch.",
+      "question": "Hai điểm có cùng nhãn net trên schematic thường có quan hệ gì?",
+      "options": [
+        "Nối điện với nhau",
+        "Luôn có điện áp khác nhau",
+        "Là hai IC riêng",
+        "Chỉ cùng vị trí vật lý"
+      ],
+      "answer": 0,
+      "explain": "Cùng net nghĩa là thuộc một mạng nối điện trong thiết kế.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 15,
+      "module": 1,
+      "title": "Boardview và vị trí linh kiện",
+      "body": "Boardview biểu diễn vị trí, designator, pad và net trên layout bo mạch; schematic giải thích chức năng và kết nối. Khi tra lỗi, dùng schematic xác định net, sau đó dùng boardview tìm điểm đo. Boardview có thể thiếu hoặc không chính xác với phiên bản bo mạch khác; luôn so mã board, revision và dấu định hướng. Tên chân trong phần mềm không thay thế kiểm tra bằng mắt và datasheet.",
+      "practice": "Dùng boardview mẫu hợp pháp: tìm R120, U5 và một điểm GND; ghi lại mặt TOP/BOTTOM và so khớp designator với schematic. Không sử dụng dữ liệu bị rò rỉ hoặc không có quyền truy cập.",
+      "question": "Boardview hữu ích nhất để làm gì?",
+      "options": [
+        "Xác định vị trí linh kiện/pad trên bo",
+        "Tự đo điện áp",
+        "Thay thế datasheet",
+        "Tăng tốc CPU"
+      ],
+      "answer": 0,
+      "explain": "Boardview giúp xác định vị trí vật lý và net của pad.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 16,
+      "module": 1,
+      "title": "Mạch chia áp, pull-up, pull-down",
+      "body": "Mạch chia áp gồm hai điện trở nối tiếp giữa VIN và GND; nếu không tải, VOUT=VIN×R2/(R1+R2). Khi có tải hoặc dòng rò, kết quả thay đổi. Pull-up kéo tín hiệu về mức cao khi không bị điều khiển; pull-down kéo về mức thấp. Mức logic còn phụ thuộc điện áp I/O, ngưỡng của IC và cấu hình open-drain/push-pull. Không tự nối pull-up vào rail cao hơn định mức chân IC.",
+      "practice": "Bài giấy: VIN=3.3V, R1=10kΩ, R2=10kΩ, tính VOUT khi không tải. Vẽ pull-up 10k lên 3.3V với nút nhấn kéo xuống GND; không cần lắp mạch thật.",
+      "question": "Chia áp 3.3V bằng hai điện trở 10kΩ bằng nhau cho khoảng bao nhiêu volt?",
+      "options": [
+        "1.65V",
+        "3.3V",
+        "0V",
+        "6.6V"
+      ],
+      "answer": 0,
+      "explain": "VOUT=3.3×10/(10+10)=1.65V khi không tải.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 17,
+      "module": 1,
+      "title": "Nguồn chờ 3.3V/5V",
+      "body": "Nguồn chờ thường cấp cho EC, mạch nhận nút nguồn và một số logic điều khiển khi hệ thống chưa khởi động đầy đủ. Tên gọi +3VALW, +3VPCU, +3V_AUX không đồng nhất giữa các hãng; không được giả định tất cả laptop đều có 3.3V/5V luôn bật. Đầu vào thường đi qua bảo vệ, MOSFET, bộ điều khiển buck/LDO và tín hiệu enable. Trình tự cần được đối chiếu schematic/service manual theo model.",
+      "practice": "Phân tích sơ đồ khối trên giấy: adapter → bảo vệ đầu vào → bộ điều khiển nguồn chờ → EC. Ghi các điểm cần kiểm tra: VIN, EN, VOUT, PGOOD; không chạm que đo vào mainboard có điện.",
+      "question": "Nguồn chờ thường phục vụ thành phần nào?",
+      "options": [
+        "EC/logic điều khiển",
+        "Loa ngoài trực tiếp",
+        "Đèn nền luôn sáng",
+        "CPU luôn chạy tối đa"
+      ],
+      "answer": 0,
+      "explain": "Nguồn chờ thường duy trì một số mạch điều khiển trước khi bật máy.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 18,
+      "module": 1,
+      "title": "Mạch buck và enable",
+      "body": "Buck converter là bộ chuyển đổi DC-DC hạ áp dùng chuyển mạch, cuộn cảm, tụ và mạch phản hồi. Các tín hiệu phổ biến gồm VIN, EN, SW, FB, PGOOD; tên chân tùy IC. VOUT được điều chỉnh theo điện áp tham chiếu và mạng hồi tiếp, không thể suy ra từ VIN đơn thuần. Sóng tại chân SW là xung chuyển mạch, không phải điện áp DC ổn định; đo sai kỹ thuật có thể gây chập.",
+      "practice": "Trên datasheet công khai của IC buck, tìm pin VIN, EN, SW, FB và bảng absolute maximum ratings. Vẽ sơ đồ khối và giải thích tại sao SW không được xem như đường DC 5V.",
+      "question": "Chân FB của buck thường liên quan đến chức năng gì?",
+      "options": [
+        "Phản hồi điều chỉnh điện áp",
+        "Lưu BIOS",
+        "Giao tiếp Wi-Fi",
+        "Đo nhiệt độ phòng"
+      ],
+      "answer": 0,
+      "explain": "FB nhận tín hiệu phản hồi phục vụ vòng điều khiển điện áp.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 19,
+      "module": 1,
+      "title": "Mạch sạc và nhận adapter",
+      "body": "Mạch sạc laptop có thể nhận adapter barrel hoặc USB-C PD; giao thức đàm phán USB-C liên quan bộ điều khiển Type-C/PD, không chỉ IC sạc. Các khối thường gồm nhận adapter, bảo vệ, power-path, đo dòng, điều khiển sạc và quản lý pin. Điện áp sạc, số cell, giới hạn dòng, NTC và trạng thái pin tùy model. Pin lithium có nguy cơ cháy khi chập hoặc tác động nhiệt; không tiêm nguồn, nối tắt bảo vệ hay thử sạc pin lỗi.",
+      "practice": "Đọc sơ đồ khối nguồn USB-C PD và lập bảng các điều kiện: có nguồn adapter, có đàm phán PD, cho phép sạc, trạng thái pin. Chỉ phân tích tài liệu, không can thiệp pin.",
+      "question": "USB-C PD có vai trò quan trọng nào?",
+      "options": [
+        "Đàm phán cấu hình cấp nguồn",
+        "Luôn cung cấp 20V ngay",
+        "Thay thế hoàn toàn IC sạc",
+        "Đảm bảo pin không hỏng"
+      ],
+      "answer": 0,
+      "explain": "USB-C PD cho phép thương lượng khả năng cấp nguồn theo thiết bị.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 20,
+      "module": 1,
+      "title": "Tín hiệu power-good và reset",
+      "body": "Power-good (PGOOD/PWRGD) thường là tín hiệu báo rail đạt điều kiện hợp lệ, nhưng có thể active-high, active-low hoặc open-drain tùy IC. Reset giữ hệ thống ở trạng thái xác định cho đến khi điều kiện nguồn/xung nhịp phù hợp. Không thể kết luận CPU lỗi khi reset chưa nhả; cần xem chuỗi phụ thuộc và điều kiện nguồn. Các tín hiệu EC, SLP, RSMRST, PLTRST khác nhau theo nền tảng.",
+      "practice": "Vẽ sơ đồ thời gian giả định: VIN xuất hiện → rail ổn định → PGOOD → reset nhả. Ghi rõ đây chỉ là ví dụ, không phải chuỗi chuẩn cho mọi laptop.",
+      "question": "PGOOD thường thông báo điều gì?",
+      "options": [
+        "Điều kiện nguồn đã đạt tiêu chí của IC",
+        "Ổ SSD còn trống",
+        "Nhiệt độ CPU luôn thấp",
+        "BIOS đã cập nhật"
+      ],
+      "answer": 0,
+      "explain": "PGOOD thường phản ánh trạng thái nguồn theo tiêu chí bộ điều khiển.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 21,
+      "module": 1,
+      "title": "Sơ đồ khối khởi động",
+      "body": "Trình tự khởi động là chuỗi phụ thuộc giữa nguồn đầu vào, rail chờ, EC, tín hiệu nút nguồn, rail hệ thống, reset và các khối xử lý. Không tồn tại một trình tự duy nhất cho mọi máy; nền tảng Intel/AMD và từng nhà sản xuất có khác biệt. Một lỗi “không lên hình” có thể xuất hiện dù một số rail đã hoạt động. Phải tách triệu chứng mất nguồn, bật rồi tắt, có nguồn không POST và có POST không hiển thị.",
+      "practice": "Từ sơ đồ khối tự tạo, phân loại 4 tình huống: không có nguồn chờ; có nguồn chờ nhưng nút nguồn không phản hồi; máy bật tắt ngay; máy chạy quạt nhưng không hình. Liệt kê dữ liệu cần thu thập, chưa kết luận linh kiện.",
+      "question": "Khi máy có quạt nhưng không hình, điều nào đúng?",
+      "options": [
+        "Chưa đủ cơ sở kết luận GPU hỏng",
+        "Chắc chắn RAM hỏng",
+        "Chắc chắn màn hình hỏng",
+        "Chắc chắn nguồn chờ mất"
+      ],
+      "answer": 0,
+      "explain": "Cần phân biệt POST, hình xuất ngoài, tín hiệu màn và các rail liên quan.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 22,
+      "module": 1,
+      "title": "Đọc datasheet và phân tích mạch",
+      "body": "Datasheet mô tả pinout, điện áp vận hành, absolute maximum ratings, đặc tính điện, sơ đồ ứng dụng và timing. Absolute maximum không phải mức hoạt động khuyến nghị. Cần phân biệt datasheet linh kiện với service manual và schematic của bo. Với IC có nhiều revision hoặc hậu tố part number, tra đúng biến thể. Đánh giá thông tin theo tài liệu nhà sản xuất và ngày phát hành; không tự nhận thông số 2026 nếu chưa kiểm chứng.",
+      "practice": "Chọn datasheet của một IC buck công khai trên website nhà sản xuất, ghi: mã đầy đủ, revision, VIN hoạt động, chân EN, sơ đồ ứng dụng và nguồn URL. Không thử lắp hoặc cấp nguồn IC.",
+      "question": "Absolute maximum ratings có nghĩa là gì?",
+      "options": [
+        "Giới hạn chịu đựng, không phải mức hoạt động thường xuyên",
+        "Điểm làm việc tối ưu",
+        "Giá bán IC",
+        "Tốc độ xử lý"
+      ],
+      "answer": 0,
+      "explain": "Điều kiện vận hành phải lấy từ Recommended Operating Conditions.",
+      "status": "Bài học mở rộng – ví dụ minh họa, cần đối chiếu model",
+      "updated": "2026-10-30",
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps62130.pdf",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 23,
+      "module": 2,
+      "title": "Kiến trúc mainboard laptop",
+      "body": "Kiến trúc bo mạch gồm đầu vào nguồn, mạch sạc, các bộ biến đổi DC-DC, EC, SoC/CPU, RAM, lưu trữ và I/O. Cùng một chức năng có thể được tích hợp vào IC khác nhau tùy thiết kế. Phân biệt sơ đồ khối với sơ đồ nguyên lý: sơ đồ khối cho biết luồng chức năng, không cung cấp chân đo thực tế.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Vẽ sơ đồ khối của laptop từ adapter đến CPU và màn hình; ghi rõ mỗi khối cần nguồn hay tín hiệu điều khiển nào.",
+      "question": "Sơ đồ khối dùng chủ yếu để làm gì?",
+      "options": [
+        "Nhận biết mối liên hệ chức năng",
+        "Xác định mọi điện trở hỏng",
+        "Thay thế datasheet",
+        "Đo điện áp trực tiếp"
+      ],
+      "answer": 0,
+      "explain": "Sơ đồ khối diễn tả luồng chức năng, không thay thế schematic.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 24,
+      "module": 2,
+      "title": "Đầu vào adapter và bảo vệ",
+      "body": "Đường đầu vào thường gồm cổng cấp điện, phần tử bảo vệ, MOSFET chuyển mạch và mạch nhận biết adapter. Một số thiết kế dùng jack DC, một số dùng USB-C. Cần đọc sơ đồ đúng mã main trước khi kết luận điện áp tại một điểm là bình thường hay bất thường.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Trên bản sơ đồ mẫu, khoanh vùng cổng nguồn, cầu chì, MOSFET và đường cấp cho bộ sạc; không cấp điện cho main lỗi.",
+      "question": "Vì sao không thể kết luận MOSFET hỏng chỉ vì đầu ra 0V?",
+      "options": [
+        "Vì MOSFET không có chân",
+        "Vì có thể chưa được điều khiển mở",
+        "Vì mọi MOSFET đều thường đóng",
+        "Vì 0V luôn đúng"
+      ],
+      "answer": 1,
+      "explain": "MOSFET có thể bị tắt theo logic điều khiển hoặc do điều kiện bảo vệ.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 25,
+      "module": 2,
+      "title": "USB-C Power Delivery",
+      "body": "USB-C là hình dạng cổng; USB Power Delivery (PD) là giao thức thương lượng cấp nguồn. Nguồn ban đầu và mức công suất sau thương lượng phụ thuộc bộ sạc, cáp, thiết bị và phiên bản chuẩn. Không mặc định mọi cổng USB-C laptop đều hỗ trợ sạc hoặc mọi bộ sạc PD đều đáp ứng công suất yêu cầu.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Lập bảng cho 3 laptop từ tài liệu hãng: cổng nào nhận sạc USB-C, công suất tối thiểu và loại adapter được hỗ trợ.",
+      "question": "USB-C PD khác USB-C ở điểm nào?",
+      "options": [
+        "PD là giao thức thương lượng điện năng",
+        "PD chỉ là kiểu đầu nối",
+        "Mọi USB-C đều có PD",
+        "PD chỉ truyền hình ảnh"
+      ],
+      "answer": 0,
+      "explain": "USB-C chỉ định đầu nối; PD xác định quá trình thương lượng cấp điện.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 26,
+      "module": 2,
+      "title": "Mạch sạc pin laptop",
+      "body": "Bộ điều khiển sạc quản lý đường cấp từ adapter, pin, dòng sạc và trạng thái bảo vệ. Điện áp pin thay đổi theo cấu hình cell và trạng thái; không lấy điện áp pin từ một model để áp dụng cho model khác. Việc laptop hoạt động khi cắm nguồn nhưng không sạc có thể do firmware, giới hạn bảo vệ pin, adapter hoặc mạch sạc.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Dựa trên sơ đồ giả định, ghi danh sách thông tin cần có trước khi chẩn đoán: part number IC sạc, datasheet, điện áp pin danh định, báo lỗi hệ điều hành. Không mở hoặc kích pin lithium.",
+      "question": "Dấu hiệu không sạc pin đủ để kết luận IC sạc hỏng?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "Cần kiểm tra nhiều nguyên nhân trước khi xác định linh kiện.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 27,
+      "module": 2,
+      "title": "Nguồn always-on",
+      "body": "Nguồn always-on/standby duy trì các mạch quản lý cần thiết khi máy chưa bật hoàn toàn. Tên rail khác nhau theo nhà sản xuất, ví dụ +3VALW hay +3V_AUX; không suy ra giá trị chỉ từ tên. Trạng thái rail phụ thuộc S-state và thiết kế.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Từ schematic công khai hoặc sơ đồ bài học, lập bảng rail: tên, nguồn gốc, điều kiện enable, tải. Chỉ phân tích tài liệu.",
+      "question": "Rail always-on có nghĩa gì?",
+      "options": [
+        "Luôn có điện kể cả tháo mọi nguồn",
+        "Có thể hiện diện ở trạng thái chờ theo thiết kế",
+        "Chỉ cấp cho CPU",
+        "Luôn là 5V"
+      ],
+      "answer": 1,
+      "explain": "Always-on là khái niệm theo trạng thái cấp nguồn của thiết kế.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 28,
+      "module": 2,
+      "title": "EC/KBC: phân tích điều kiện khởi động",
+      "body": "Phân biệt EC được cấp nguồn với EC đã chạy firmware. Trong sơ đồ khối giả định, đường nút nguồn chỉ là yêu cầu; các tín hiệu reset, clock, trạng thái ngủ và điều kiện PGOOD có thể quyết định khả năng phản hồi. Không suy ra chân hoặc điện áp của EC từ tên gọi chung.",
+      "practice": "Vẽ chuỗi tín hiệu nút nguồn → EC → yêu cầu bật hệ thống; ghi những điều kiện logic cần được xác nhận từ tài liệu model.",
+      "question": "Bộ phận nào thường xử lý nút nguồn trên laptop?",
+      "options": [
+        "EC hoặc bộ điều khiển tích hợp",
+        "SSD",
+        "Loa",
+        "Panel LCD"
+      ],
+      "answer": 0,
+      "explain": "EC hoặc logic quản lý nguồn thường tiếp nhận yêu cầu bật máy.",
+      "status": "Chuyên đề phân tích nâng cao (không thay thế tài liệu hãng)",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: máy nhận nguồn nhưng nút nguồn không tạo phản hồi. Có ba giả thuyết: điều kiện cấp nguồn EC chưa thỏa, EC đang reset, hoặc tín hiệu nút nguồn không đến logic xử lý. Chỉ dùng sơ đồ khối và dữ liệu giả lập để sắp xếp phép kiểm tra.",
+      "case_solution": "Hướng phân tích: cần đối chiếu sơ đồ đúng board revision; ghi rõ trạng thái nguồn, clock/reset, đường nút nguồn và tín hiệu phản hồi. Không thay EC khi chưa có bằng chứng phân biệt các giả thuyết.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Nguyên lý tổng quan; chưa đối chiếu boardview của model cụ thể"
+    },
+    {
+      "id": 29,
+      "module": 2,
+      "title": "Trình tự khởi động S0/S5",
+      "body": "S0, S3, S4, S5 là các trạng thái năng lượng trong hệ sinh thái ACPI; nhiều máy mới sử dụng Modern Standby (S0 low-power idle) thay cho S3 truyền thống. Không áp dụng một sơ đồ S3/S5 cổ điển cho mọi laptop 2026. Chuỗi bật máy gồm nhiều tín hiệu power-good, reset và enable.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "So sánh bằng bảng S5, S0 và Modern Standby từ tài liệu Microsoft/ACPI; đánh dấu điểm nào khác nhau giữa các kiến trúc.",
+      "question": "Modern Standby thường gắn với trạng thái nào?",
+      "options": [
+        "S0 low-power idle",
+        "Chỉ S3",
+        "Chỉ G3",
+        "Chỉ S5"
+      ],
+      "answer": 0,
+      "explain": "Modern Standby dựa trên trạng thái S0 tiêu thụ điện thấp.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 30,
+      "module": 2,
+      "title": "VCORE: phân biệt yêu cầu nguồn và lỗi phần cứng",
+      "body": "VCORE thường do bộ điều khiển nguồn và power stage điều chỉnh theo yêu cầu nền tảng. Mức áp phụ thuộc chế độ vận hành, kiến trúc CPU và trạng thái nguồn. Giá trị thấp khi ngủ không chứng minh lỗi. Các khái niệm cần phân biệt: VIN, EN, VR_READY/PGOOD, phản hồi FB, pha công suất, tải động.",
+      "practice": "Phân tích sơ đồ khối VRM gồm VIN, PWM, pha công suất, cuộn cảm, VCORE, phản hồi và power-good; tính công suất giả định 1V × 20A = 20W.",
+      "question": "VCORE có luôn là 1.0V không?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "VCORE thay đổi theo CPU và chế độ tải.",
+      "status": "Chuyên đề phân tích nâng cao (không thay thế tài liệu hãng)",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống giả lập: VIN có, EN chưa được khẳng định, VCORE = 0. Hãy giải thích vì sao chưa thể kết luận MOSFET hoặc PWM hỏng.",
+      "case_solution": "Cần xác minh trạng thái máy và điều kiện kích hoạt trước; sau đó mới đánh giá dữ liệu nguồn và trạng thái phản hồi. Không đưa thông số điện áp mẫu thành tiêu chuẩn mọi model.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Nguyên lý tổng quan; chưa đối chiếu boardview của model cụ thể"
+    },
+    {
+      "id": 31,
+      "module": 2,
+      "title": "RAM DDR4/DDR5",
+      "body": "DDR4 và DDR5 khác nhau về giao tiếp, quản lý nguồn và bố trí; DDR5 DIMM có PMIC, nhưng cấu hình SO-DIMM/LPDDR phụ thuộc nền tảng. LPDDR thường hàn trực tiếp lên bo. Lỗi không nhận RAM có thể liên quan module, khe, nguồn, tín hiệu hoặc firmware.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Đọc thông số chính thức của một laptop DDR4 và một laptop DDR5: xác định dạng RAM, khả năng nâng cấp và hỗ trợ kênh nhớ.",
+      "question": "Có thể lắp DDR5 SO-DIMM vào khe DDR4 không?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "Khe và tín hiệu của DDR4 và DDR5 không tương thích.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 32,
+      "module": 2,
+      "title": "BIOS/UEFI và SPI flash",
+      "body": "UEFI là giao diện firmware khởi động; chip SPI flash có thể chứa firmware hệ thống nhưng không phải tất cả thành phần firmware đều nằm trong một chip. Secure Boot là cơ chế xác minh chuỗi khởi động, không đồng nghĩa mật khẩu BIOS. Việc nạp firmware sai phiên bản có thể làm máy không khởi động.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Dùng trang hỗ trợ hãng để xác định phiên bản BIOS/UEFI, mã máy, ghi chú phát hành và hướng dẫn cập nhật; không thực hiện flash trên máy đang hoạt động ổn định.",
+      "question": "Secure Boot chủ yếu làm gì?",
+      "options": [
+        "Xác minh phần mềm khởi động được tin cậy",
+        "Tăng tốc quạt",
+        "Sạc pin nhanh hơn",
+        "Tăng RAM"
+      ],
+      "answer": 0,
+      "explain": "Secure Boot kiểm soát tính tin cậy của các thành phần khởi động.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 33,
+      "module": 2,
+      "title": "PCH/SoC và tín hiệu reset",
+      "body": "PCH có thể tách rời CPU hoặc tích hợp tùy nền tảng. Các tín hiệu reset và power-good đảm bảo các miền chức năng được khởi tạo đúng thứ tự. Tên tín hiệu thường gặp như PLTRST# không đồng nghĩa có mặt trên mọi model. Dấu # thường biểu thị tín hiệu active-low.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Giải thích ý nghĩa ký hiệu # ở RESET# và vẽ timeline logic đơn giản: nguồn ổn định → PGOOD → bỏ reset; không áp dụng thời gian cụ thể khi chưa có datasheet.",
+      "question": "RESET# thường là tín hiệu gì?",
+      "options": [
+        "Tích cực mức thấp",
+        "Tích cực mức cao bắt buộc",
+        "Đường nguồn 19V",
+        "Đường âm thanh"
+      ],
+      "answer": 0,
+      "explain": "Dấu # thường chỉ tín hiệu tích cực ở mức thấp.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 34,
+      "module": 2,
+      "title": "eDP và mạch màn hình",
+      "body": "eDP là giao tiếp hiển thị nội bộ phổ biến trên laptop; đường dữ liệu tốc độ cao khác với nguồn panel và điều khiển đèn nền. Không lên hình có thể do màn, cáp, backlight, GPU, firmware hoặc trạng thái khởi động. Không cắm/rút cáp màn hình khi còn pin hoặc nguồn.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Vẽ sơ đồ khối SoC/GPU → eDP cable → panel, thêm nguồn panel và backlight; lập bảng triệu chứng: có hình ngoài/không hình trong, có đèn nền/không.",
+      "question": "eDP chủ yếu truyền gì?",
+      "options": [
+        "Dữ liệu hiển thị",
+        "Điện áp adapter 20V",
+        "Dữ liệu SATA",
+        "Dòng sạc pin"
+      ],
+      "answer": 0,
+      "explain": "eDP là liên kết truyền dữ liệu hiển thị.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 35,
+      "module": 2,
+      "title": "USB4 và Thunderbolt",
+      "body": "USB4 và Thunderbolt hỗ trợ các khả năng truyền dữ liệu tốc độ cao và có thể kết hợp DisplayPort/PCIe tùy phiên bản, bộ điều khiển, cáp và cổng. Tốc độ danh nghĩa không đảm bảo hiệu năng thực tế. Một cổng USB-C không tự động hỗ trợ USB4 hoặc Thunderbolt.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Đối chiếu bảng thông số hai laptop, đánh dấu cổng USB-C hỗ trợ USB4, Thunderbolt, DP Alt Mode và PD; chỉ dựa trên tài liệu hãng.",
+      "question": "Có thể nhận diện chắc chắn Thunderbolt chỉ từ hình dạng USB-C?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "Cần kiểm tra thông số và ký hiệu/cấu hình chính thức.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 36,
+      "module": 2,
+      "title": "Mạch quạt và cảm biến nhiệt",
+      "body": "Mạch quạt dùng tín hiệu điều khiển như PWM và phản hồi tốc độ tachometer, phối hợp cảm biến nhiệt và firmware. Không phải mọi quạt có cùng số chân hay pinout. Quạt chạy tối đa liên tục có thể do cảm biến, firmware, lỗi điều khiển hoặc tản nhiệt.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Phân tích sơ đồ quạt 4 dây minh họa: nguồn, mass, PWM, tach; tra pinout thực tế trong tài liệu trước khi thao tác.",
+      "question": "Tachometer trong quạt thường cung cấp gì?",
+      "options": [
+        "Phản hồi tốc độ",
+        "Nguồn sạc pin",
+        "Dữ liệu màn hình",
+        "Địa chỉ MAC"
+      ],
+      "answer": 0,
+      "explain": "Tach là tín hiệu phản hồi vòng quay.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 37,
+      "module": 2,
+      "title": "SSD NVMe và PCIe",
+      "body": "SSD NVMe sử dụng giao thức NVMe trên PCIe; M.2 là chuẩn hình dạng/đầu nối, không đồng nghĩa mọi ổ M.2 là NVMe. Có ổ M.2 SATA và M.2 NVMe với hỗ trợ khe khác nhau. SSD không hiện trong BIOS có thể do khe không tương thích, firmware, nguồn hoặc chính ổ.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Lập bảng so sánh M.2 SATA, M.2 NVMe, 2.5-inch SATA; ghi rõ giao thức, đầu nối, khả năng tương thích phải kiểm tra theo model.",
+      "question": "M.2 có đồng nghĩa NVMe không?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "M.2 là hình dạng, còn NVMe là giao thức.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 38,
+      "module": 2,
+      "title": "Âm thanh và mạng",
+      "body": "Hệ thống âm thanh có codec, amplifier, jack detection và đường dữ liệu; mạng có Ethernet PHY/MAC hoặc module Wi-Fi. Lỗi không có tiếng và không có mạng có thể do driver, hệ điều hành, firmware hoặc phần cứng. Bắt đầu chẩn đoán bằng phân biệt tầng phần mềm và phần cứng.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Tạo checklist không xâm lấn: Device Manager, driver chính hãng, thử thiết bị ngoài, kiểm tra BIOS, nhật ký sự kiện; không thay IC khi chưa khoanh vùng.",
+      "question": "Bước đầu hợp lý khi mất âm thanh là gì?",
+      "options": [
+        "Kiểm tra cấu hình và driver",
+        "Thay ngay codec",
+        "Khò IC",
+        "Cắt đường tín hiệu"
+      ],
+      "answer": 0,
+      "explain": "Loại trừ nguyên nhân phần mềm trước khi can thiệp bo mạch.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 39,
+      "module": 2,
+      "title": "Đọc sơ đồ nguồn thực tế",
+      "body": "Quy trình đọc sơ đồ nguồn: nhận diện đầu vào, đường nguồn, IC điều khiển, enable, feedback, power-good và tải. Schematic chỉ mô tả kết nối; boardview giúp định vị trên PCB. Datasheet là tài liệu xác định điều kiện vận hành và giới hạn linh kiện.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Dùng mạch buck giả lập trên giấy: tô màu VIN, SW, VOUT, FB, EN và GND; ghi câu hỏi cần xác minh trước khi đo trên main thật.",
+      "question": "Muốn tìm vị trí tụ C101 trên bo cần tài liệu nào thuận tiện nhất?",
+      "options": [
+        "Boardview",
+        "Danh sách ứng dụng",
+        "Bảng mã ASCII",
+        "Sổ tay Windows"
+      ],
+      "answer": 0,
+      "explain": "Boardview liên kết mã linh kiện với vị trí trên PCB.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 40,
+      "module": 2,
+      "title": "Tổng hợp phân tích mainboard",
+      "body": "Một ca chẩn đoán tốt bắt đầu từ triệu chứng, lịch sử lỗi, mã máy, sơ đồ khối và các phép thử ít rủi ro. Ghi lại giả thuyết, bằng chứng hỗ trợ, bằng chứng phản bác và kết luận. Không kết luận CPU, PCH hoặc PMIC hỏng chỉ từ một phép đo.\n\nGóc nhìn kỹ thuật: xác định rõ mã mainboard, revision và tài liệu hãng trước khi áp dụng thông số. Không tự suy đoán pinout, mức điện áp hoặc trình tự khởi động cho một model cụ thể.\n\nChecklist phân tích: (1) xác định triệu chứng; (2) xác định khối liên quan; (3) đối chiếu sơ đồ/datasheet; (4) chọn phép kiểm tra ít rủi ro; (5) ghi nhận và kiểm chứng kết luận.",
+      "practice": "Bài tập tình huống: laptop báo sạc nhưng không khởi động; lập ít nhất 5 giả thuyết và thứ tự kiểm tra không xâm lấn. Viết phiếu tiếp nhận và kế hoạch đo cho kỹ thuật viên có giám sát.",
+      "question": "Điều nào giúp chẩn đoán đáng tin cậy nhất?",
+      "options": [
+        "Một số đo duy nhất",
+        "Chuỗi bằng chứng và loại trừ giả thuyết",
+        "Thay linh kiện ngẫu nhiên",
+        "Khò tất cả IC"
+      ],
+      "answer": 1,
+      "explain": "Chẩn đoán có hệ thống cần nhiều bằng chứng độc lập.",
+      "status": "Bài học mở rộng – kiến thức tổng quan, chưa xác minh theo từng model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 41,
+      "module": 3,
+      "title": "Không nhận adapter",
+      "body": "SƠ ĐỒ KHỐI: Đầu vào DC hoặc USB-C PD\n\nPhân biệt adapter hỏng, cáp hỏng, cổng hỏng và lỗi nhận diện nguồn. Với jack DC, kiểm tra điện áp adapter bằng thiết bị đo phù hợp. Với USB-C, mức mặc định thường là 5V trước khi đàm phán PD; không giả định máy luôn nhận 20V. Kiểm tra thông số bộ sạc và cáp, đối chiếu hướng dẫn của model.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Thử adapter tương thích đã biết hoạt động, quan sát đèn báo và nhật ký lỗi. Không mở adapter hoặc đo chân cổng đang có điện.",
+      "question": "USB-C PD có thể bắt đầu ở điện áp nào trước khi đàm phán?",
+      "options": [
+        "5V",
+        "20V cố định",
+        "48V",
+        "0V bắt buộc"
+      ],
+      "answer": 0,
+      "explain": "USB-C PD thường khởi đầu ở mức 5V; mức cao hơn phụ thuộc đàm phán.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 42,
+      "module": 3,
+      "title": "Không lên nguồn",
+      "body": "SƠ ĐỒ KHỐI: Nguồn đầu vào → nguồn chờ → EC → trình tự bật\n\nKhông lên nguồn có nhiều nguyên nhân: adapter, pin, cổng, đường cấp nguồn, EC, nút nguồn hoặc firmware. Phân biệt không có đèn, có đèn nhưng không POST và có quạt nhưng không hình. Đường nguồn 3.3V/5V không phải luôn có ở mọi thiết kế hiện đại; phải xem schematic.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Ghi lại 5 dấu hiệu: đèn sạc, phản ứng nút nguồn, quạt, âm báo, màn hình ngoài. Lập sơ đồ giả thuyết; chưa đo trên main đang cấp điện.",
+      "question": "Khi máy không lên nguồn, bước đầu hợp lý nhất?",
+      "options": [
+        "Thay CPU ngay",
+        "Phân loại triệu chứng và xác nhận nguồn cấp",
+        "Khò EC",
+        "Nạp BIOS bất kỳ"
+      ],
+      "answer": 1,
+      "explain": "Phân loại triệu chứng trước khi can thiệp phần cứng.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 43,
+      "module": 3,
+      "title": "Laptop không lên hình: tách POST và đường hiển thị",
+      "body": "Đèn nguồn sáng không đồng nghĩa POST thành công. Phân biệt không có ảnh trên panel với hệ thống chưa hoàn tất khởi động. Các nhóm nguyên nhân gồm firmware, bộ nhớ, đường xuất hình, panel/backlight, và trạng thái sleep. Dữ kiện có giá trị gồm biểu hiện trên màn ngoài, tín hiệu âm thanh, trạng thái thiết bị và lịch sử sửa chữa.",
+      "practice": "Tạo bảng theo dõi thời gian mỗi chu kỳ, đèn và quạt; so sánh với máy tốt cùng model nếu có.",
+      "question": "Power cycling có thể do nguyên nhân nào?",
+      "options": [
+        "Chỉ BIOS",
+        "Chỉ pin",
+        "Nhiều nguyên nhân, cần khoanh vùng",
+        "Chỉ màn hình"
+      ],
+      "answer": 2,
+      "explain": "Không thể kết luận từ một triệu chứng.",
+      "status": "Chuyên đề phân tích nâng cao (không thay thế tài liệu hãng)",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống giả lập: màn trong tối, màn ngoài có hình. Hãy khoanh vùng theo đường panel và giải thích vì sao chưa nên can thiệp BIOS.",
+      "case_solution": "Màn ngoài có hình giúp ưu tiên nhánh màn trong, cáp, đèn nền và điều khiển hiển thị; vẫn phải đối chiếu tài liệu thiết bị.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Nguyên lý tổng quan; chưa đối chiếu boardview của model cụ thể"
+    },
+    {
+      "id": 44,
+      "module": 3,
+      "title": "Có nguồn nhưng không hình",
+      "body": "SƠ ĐỒ KHỐI: Power → POST → xuất hình\n\nCần tách lỗi không POST với lỗi đường hiển thị. Kiểm tra màn hình ngoài, độ sáng, tín hiệu đèn, âm thanh khởi động, RAM và trạng thái Sleep. Màn laptop hiện đại thường dùng eDP; không tự suy đoán điện áp hay chân pin.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Lập cây quyết định: có POST? có hình màn ngoài? có đèn nền? Lưu ảnh dấu hiệu.",
+      "question": "Có hình màn ngoài nhưng màn trong đen gợi ý kiểm tra gì?",
+      "options": [
+        "Đường hiển thị nội bộ",
+        "Ổ SSD đầu tiên",
+        "Quạt đầu tiên",
+        "Adapter luôn hỏng"
+      ],
+      "answer": 0,
+      "explain": "Ưu tiên khoanh vùng panel, cáp, đèn nền và đường eDP.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 45,
+      "module": 3,
+      "title": "Không sạc pin",
+      "body": "SƠ ĐỒ KHỐI: Adapter/PD → bộ quản lý sạc → pin\n\nKhông sạc có thể do chính sách bảo vệ pin, giới hạn sạc trong BIOS/app hãng, adapter thiếu công suất, pin lỗi, cổng lỗi hoặc mạch sạc. Một số máy dừng ở 60–80% theo chế độ bảo vệ pin. Tránh kết luận IC sạc hỏng khi chưa loại trừ cài đặt.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Kiểm tra trạng thái sạc trong hệ điều hành và ứng dụng hãng; đối chiếu bộ sạc đúng chuẩn. Không tháo hay chọc thủng pin lithium.",
+      "question": "Pin dừng ở 80% luôn là lỗi IC sạc?",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 1,
+      "explain": "Có thể do tính năng giới hạn sạc bảo vệ pin.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 46,
+      "module": 3,
+      "title": "Chập đường nguồn",
+      "body": "SƠ ĐỒ KHỐI: Nguồn → rail → tải\n\nĐường nguồn có điện trở thấp không luôn là chập: rail CPU/GPU có thể có trở kháng rất thấp theo thiết kế. Cần so sánh sơ đồ, datasheet và giá trị máy tốt. Không bơm điện áp tùy ý vào rail, nhất là rail SoC hoặc pin.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Trên bo mạch không cấp điện, chỉ quan sát vị trí linh kiện và đánh dấu các rail theo schematic mẫu; không cấp nguồn ngoài.",
+      "question": "Điện trở thấp ở rail CPU có chắc là chập?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "Trở kháng thấp có thể là đặc tính bình thường của rail tải lớn.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 47,
+      "module": 3,
+      "title": "Không nhận RAM",
+      "body": "SƠ ĐỒ KHỐI: SPD/PMIC/đường dữ liệu → khởi tạo bộ nhớ\n\nVới DDR5, một số module có PMIC và SPD Hub; LPDDR thường hàn trên main. Không nhận RAM có thể do module, khe, firmware, CPU memory controller hoặc đường tín hiệu. Chỉ thay module tương thích theo tài liệu nhà sản xuất.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Tra thông số RAM theo model, lập bảng loại DDR, tốc độ, dung lượng và giới hạn nâng cấp. Ngắt nguồn và pin theo quy trình hãng trước khi tháo RAM.",
+      "question": "DDR5 SODIMM và DDR4 SODIMM có thể lắp thay trực tiếp?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "Khác cơ khí và điện; không tương thích thay trực tiếp.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 48,
+      "module": 3,
+      "title": "Lỗi BIOS/UEFI",
+      "body": "SƠ ĐỒ KHỐI: Firmware → POST → thiết bị khởi động\n\nPhân biệt lỗi firmware với lỗi cấu hình boot, Secure Boot, TPM, ổ lưu trữ và hệ điều hành. Nâng cấp BIOS cần đúng model, đúng bản phát hành và nguồn ổn định. Không ghi firmware không xác thực hoặc xóa dữ liệu bảo mật.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Đọc trang hỗ trợ chính hãng, ghi lại phiên bản BIOS, ngày phát hành và hướng dẫn phục hồi chính thức; không thực hiện flash trên máy đang ổn định chỉ để luyện tập.",
+      "question": "Nguồn tải BIOS đáng tin nhất?",
+      "options": [
+        "Diễn đàn bất kỳ",
+        "Trang hỗ trợ chính hãng đúng model",
+        "File gửi qua chat lạ",
+        "ROM không rõ nguồn"
+      ],
+      "answer": 1,
+      "explain": "Ưu tiên bản chính hãng khớp model.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 49,
+      "module": 3,
+      "title": "Lỗi màn hình eDP",
+      "body": "SƠ ĐỒ KHỐI: GPU → eDP → panel/đèn nền\n\nMất hình, nhấp nháy hoặc nhiễu có thể đến từ panel, cáp, bản lề, driver GPU, firmware hoặc đường tín hiệu. Chỉ xuất hiện sau khi vào Windows gợi ý cần thử driver, chế độ hiển thị và GPU trước khi kết luận hỏng panel.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "So sánh hình ở BIOS và trong hệ điều hành; thử màn hình ngoài và ghi lại kết quả. Không cắm rút cáp eDP khi còn điện hoặc pin.",
+      "question": "Nhiễu chỉ sau khi vào hệ điều hành nên kiểm tra thêm gì?",
+      "options": [
+        "Driver/chế độ hiển thị",
+        "Chỉ thay panel",
+        "Chỉ thay SSD",
+        "Chỉ thay adapter"
+      ],
+      "answer": 0,
+      "explain": "Sự khác biệt BIOS/OS có giá trị chẩn đoán.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 50,
+      "module": 3,
+      "title": "Quá nhiệt và tự tắt",
+      "body": "SƠ ĐỒ KHỐI: Cảm biến → điều khiển quạt → giới hạn nhiệt\n\nNhiệt cao có thể do bụi, quạt, khe gió, tiếp xúc heatsink, keo tản nhiệt hoặc tải nền. Không có một mức nhiệt áp dụng cho mọi CPU. Dùng công cụ giám sát và so với giới hạn hãng; tránh ép tải máy có dấu hiệu bất thường.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Ghi nhiệt độ khi nhàn rỗi và trong tác vụ nhẹ, tốc độ quạt và tình trạng bụi. Không chạy stress test trên máy đang tự tắt vì quá nhiệt.",
+      "question": "Ngưỡng nhiệt an toàn có giống nhau cho mọi CPU?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "Giới hạn nhiệt phụ thuộc CPU và thiết kế máy.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 51,
+      "module": 3,
+      "title": "Lỗi USB-C/USB4",
+      "body": "SƠ ĐỒ KHỐI: CC/PD → mux → USB/DisplayPort\n\nUSB-C là hình dạng đầu nối, không bảo đảm hỗ trợ sạc, DisplayPort hay USB4. Khả năng phụ thuộc cổng, cáp, firmware và thiết bị ngoại vi. USB4 có cơ chế kết nối và truyền dữ liệu riêng; cần đối chiếu thông số cổng.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Lập ma trận kiểm tra theo từng cổng: sạc, dữ liệu, màn hình, dock; dùng phụ kiện đạt chuẩn và ghi kết quả.",
+      "question": "Mọi cổng USB-C đều hỗ trợ xuất hình?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "Khả năng xuất hình tùy chức năng cổng.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 52,
+      "module": 3,
+      "title": "Case study tổng hợp",
+      "body": "SƠ ĐỒ KHỐI: Quan sát → giả thuyết → kiểm chứng → kết luận\n\nTình huống: laptop có đèn sạc, nhấn nguồn quạt quay 2 giây rồi tắt, không hình. Chưa đủ dữ liệu kết luận lỗi BIOS hay CPU. Lập bảng: triệu chứng, nguyên nhân có thể, phép kiểm tra không xâm lấn, kết quả, bước tiếp theo. Chỉ can thiệp mạch điện khi có sơ đồ và người hướng dẫn.\n\nGHI CHÚ: Luôn đối chiếu tài liệu sửa chữa chính hãng và schematic của đúng model trước khi kết luận.",
+      "practice": "Viết báo cáo 1 trang: 3 giả thuyết ưu tiên, 3 phép kiểm tra an toàn, tiêu chí dừng và dữ liệu cần bổ sung.",
+      "question": "Cách chẩn đoán phù hợp nhất?",
+      "options": [
+        "Thay linh kiện ngẫu nhiên",
+        "Lập giả thuyết và kiểm tra từng bước",
+        "Khò main ngay",
+        "Nạp BIOS mọi máy"
+      ],
+      "answer": 1,
+      "explain": "Chẩn đoán có hệ thống giúp giảm rủi ro và chi phí.",
+      "status": "Bài học mở rộng – cần đối chiếu datasheet theo model",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 53,
+      "module": 4,
+      "title": "Kiến trúc smartphone hiện đại",
+      "body": "Điện thoại hiện đại thường gồm SoC, RAM LPDDR, lưu trữ UFS, PMIC, modem/RF, mạch sạc, màn hình và các ngoại vi. Nhiều chức năng tích hợp trong SoC nên không thể suy luận từ sơ đồ laptop. Đường cấp nguồn, clock, reset và dữ liệu phối hợp trong chuỗi khởi động.\n\nTÌNH HUỐNG THỰC TẾ: Máy rung nhưng màn hình đen: phân biệt thiết bị đã boot với lỗi hiển thị, không kết luận PMIC hỏng.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Vẽ sơ đồ khối SoC–PMIC–RAM–UFS–màn hình và đánh dấu các đường nguồn, điều khiển, dữ liệu.",
+      "question": "Vai trò chính của PMIC là gì?",
+      "options": [
+        "Quản lý các đường nguồn",
+        "Lưu ảnh",
+        "Thu sóng Wi-Fi",
+        "Hiển thị OLED"
+      ],
+      "answer": 0,
+      "explain": "PMIC phân phối và điều khiển nhiều đường nguồn.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 54,
+      "module": 4,
+      "title": "Pin Li-ion và BMS",
+      "body": "Pin lithium-ion có mạch bảo vệ và hệ thống quản lý pin (BMS hoặc fuel gauge tùy thiết kế). Điện áp pin thay đổi theo trạng thái sạc và hóa học cell; không dùng một điện áp cố định để kết luận sức khỏe. Pin phồng, biến dạng, nóng bất thường cần ngừng sử dụng và chuyển xử lý chuyên nghiệp.\n\nTÌNH HUỐNG THỰC TẾ: Máy tắt đột ngột khi còn phần trăm pin: kiểm tra lịch sử sụt áp, độ chai và phần mềm trước khi quy lỗi main.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Quan sát thông tin pin trong hệ điều hành và ghi lại chu kỳ/độ khỏe nếu máy hỗ trợ. Không tháo, chọc, kích hoặc cấp nguồn trực tiếp vào pin.",
+      "question": "Với pin phồng, bước phù hợp là gì?",
+      "options": [
+        "Tiếp tục sạc",
+        "Ngừng dùng và chuyển xử lý an toàn",
+        "Chọc thủng vỏ",
+        "Khò nóng"
+      ],
+      "answer": 1,
+      "explain": "Pin hư hại có nguy cơ cháy; không thao tác trên cell.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 55,
+      "module": 4,
+      "title": "Đầu vào USB-C và ESD",
+      "body": "Cổng USB-C có chân VBUS, GND, CC, D+/D− và các đường tốc độ cao tùy thiết bị. CC hỗ trợ nhận diện kết nối; bảo vệ ESD giúp hạn chế xung tĩnh điện. Không phải cổng USB-C nào cũng hỗ trợ USB PD, video hoặc tốc độ cao.\n\nTÌNH HUỐNG THỰC TẾ: Cắm cáp chỉ sạc một chiều: nghi vấn tiếp xúc, cáp, cổng hoặc mạch CC; cần phân biệt với lỗi pin.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Quan sát cổng bằng kính lúp khi đã tắt nguồn; dùng cáp và sạc đạt chuẩn, ghi nhận hiện tượng ở hai chiều cắm. Không chọc vật kim loại vào cổng.",
+      "question": "Chân CC của USB-C chủ yếu liên quan đến gì?",
+      "options": [
+        "Nhận diện kết nối và cấu hình",
+        "Lưu dữ liệu UFS",
+        "Âm thanh loa",
+        "Đèn flash"
+      ],
+      "answer": 0,
+      "explain": "CC hỗ trợ phát hiện vai trò và thương lượng chế độ kết nối.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 56,
+      "module": 4,
+      "title": "USB PD/PPS và sạc nhanh",
+      "body": "USB Power Delivery thương lượng khả năng cấp điện giữa nguồn và thiết bị. PPS cho phép điều chỉnh điện áp/dòng theo các bước được tiêu chuẩn quy định. Công suất sạc thực tế phụ thuộc adapter, cáp, nhiệt độ, mức pin, firmware và thiết kế máy; số watt quảng cáo không phải công suất liên tục.\n\nTÌNH HUỐNG THỰC TẾ: Máy ghi sạc nhanh nhưng sạc chậm: so sánh nhiệt độ, cáp, bộ sạc và phần trăm pin trước khi nghi IC sạc.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Lập bảng thông số adapter từ nhãn hoặc tài liệu chính hãng; không nối tắt hoặc giả lập điện áp lên pin.",
+      "question": "Điều gì quyết định công suất sạc thực tế?",
+      "options": [
+        "Chỉ adapter",
+        "Chỉ cáp",
+        "Nhiều yếu tố gồm thương lượng và nhiệt",
+        "Chỉ kích thước màn hình"
+      ],
+      "answer": 2,
+      "explain": "Sạc nhanh chịu nhiều giới hạn phần cứng và điều khiển.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 57,
+      "module": 4,
+      "title": "PMIC và các đường nguồn",
+      "body": "PMIC tạo/điều khiển nhiều rail cấp cho SoC, RAM, camera và ngoại vi; mỗi rail có thời điểm kích hoạt riêng. Các nguồn có thể là buck, LDO hoặc power switch. Đọc power tree và tín hiệu enable/PGOOD trước khi suy đoán nguyên nhân rail bằng 0V.\n\nTÌNH HUỐNG THỰC TẾ: Máy không boot nhưng có nguồn phụ: đặt giả thuyết về reset, clock, rail hoặc firmware thay vì thay PMIC ngay.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Vẽ power tree mẫu: VBAT → PMIC → rail logic/SoC/ngoại vi, ghi chú rail chỉ xuất hiện khi được enable.",
+      "question": "Rail 0V luôn có nghĩa IC hỏng?",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 1,
+      "explain": "Rail có thể đang tắt theo trạng thái hoạt động.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 58,
+      "module": 4,
+      "title": "Trình tự boot điện thoại",
+      "body": "Khởi động đi từ ROM/bootloader tới firmware, kernel và hệ điều hành, với các bước xác minh bảo mật tùy nền tảng. Treo logo có thể do phần mềm, bộ nhớ, nguồn, nhiệt hoặc phần cứng; triệu chứng không đủ để kết luận.\n\nTÌNH HUỐNG THỰC TẾ: Treo ở logo sau cập nhật: ưu tiên sao lưu dữ liệu nếu có thể và kiểm tra nhật ký/khả năng phục hồi chính hãng.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Vẽ lưu đồ nút nguồn → power sequencing → bootloader → OS → giao diện. Đánh dấu các nhánh lỗi có thể xảy ra.",
+      "question": "Treo logo chắc chắn do UFS?",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 1,
+      "explain": "Nhiều nguyên nhân khác nhau có thể tạo cùng triệu chứng.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 59,
+      "module": 4,
+      "title": "PMIC smartphone: cây nguồn và trạng thái thiết bị",
+      "body": "PMIC có thể phối hợp nhiều đường nguồn và trạng thái tiết kiệm điện. Không áp một trình tự cố định cho tất cả SoC. Phân biệt VBAT, VBUS, rail luôn bật, rail có điều kiện và các tín hiệu yêu cầu nguồn. Dữ liệu dòng nguồn chỉ là một chỉ dấu, không đủ xác định IC hỏng.",
+      "practice": "Tạo bảng phân biệt SoC, LPDDR và UFS theo chức năng, kiểu dữ liệu và dấu hiệu lỗi thường gặp.",
+      "question": "LPDDR chủ yếu là gì?",
+      "options": [
+        "Bộ nhớ làm việc",
+        "Bộ nhớ lưu trữ lâu dài",
+        "IC sạc",
+        "Ăng-ten"
+      ],
+      "answer": 0,
+      "explain": "LPDDR là RAM dùng cho dữ liệu đang xử lý.",
+      "status": "Chuyên đề phân tích nâng cao (không thay thế tài liệu hãng)",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: điện thoại không lên hình và không phản hồi giao diện. Hãy lập danh sách dữ kiện chưa biết trước khi khoanh vùng PMIC.",
+      "case_solution": "Cần xác minh trạng thái pin, dấu hiệu nhận sạc, hành vi khởi động và sơ đồ của model; tránh quy kết PMIC chỉ từ biểu hiện mất nguồn.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Nguyên lý tổng quan; chưa đối chiếu boardview của model cụ thể"
+    },
+    {
+      "id": 60,
+      "module": 4,
+      "title": "Bộ nhớ UFS",
+      "body": "UFS là chuẩn lưu trữ flash tích hợp trong nhiều điện thoại; giao tiếp khác eMMC và không thể thay thế tùy ý. Khả năng khởi động phụ thuộc firmware, phân vùng, xác minh bảo mật và trạng thái bộ nhớ. Thay chip có thể liên quan mã hóa, ghép cặp và mất dữ liệu.\n\nTÌNH HUỐNG THỰC TẾ: Máy bootloop và báo lỗi phân vùng: kiểm tra phần mềm, dung lượng và nhật ký trước khi kết luận chip UFS hỏng.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "So sánh eMMC và UFS ở mức khái niệm: giao thức, tính song công và trường hợp ứng dụng; không thực hành tháo chip.",
+      "question": "UFS dùng để làm gì?",
+      "options": [
+        "Lưu hệ điều hành và dữ liệu",
+        "Cấp nguồn màn hình",
+        "Khuếch đại sóng",
+        "Đo nhiệt độ"
+      ],
+      "answer": 0,
+      "explain": "UFS là bộ nhớ lưu trữ không mất dữ liệu khi tắt nguồn.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 61,
+      "module": 4,
+      "title": "Màn hình OLED và tín hiệu",
+      "body": "OLED tự phát sáng từng điểm ảnh, khác LCD cần đèn nền. Kết nối hiển thị có thể dùng MIPI DSI, nguồn panel và các tín hiệu reset/enable. Màn hình đen có thể do panel, cáp, mạch nguồn, firmware hoặc máy chưa boot.\n\nTÌNH HUỐNG THỰC TẾ: Máy có chuông và rung nhưng không hình: kiểm tra dấu hiệu boot và phụ kiện hiển thị đúng model trước khi phân tích mạch.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Lập bảng phân biệt màn hình đen, hình mờ, sọc, nhấp nháy theo nhóm nguyên nhân có thể; không tháo panel dán keo.",
+      "question": "OLED có cần đèn nền riêng như LCD không?",
+      "options": [
+        "Có",
+        "Không"
+      ],
+      "answer": 1,
+      "explain": "Pixel OLED tự phát sáng.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 62,
+      "module": 4,
+      "title": "Camera và đường MIPI",
+      "body": "Camera smartphone thường dùng MIPI CSI-2 cho dữ liệu hình ảnh và các đường điều khiển I2C/I3C tùy thiết kế. Module cần nguồn, clock và reset đúng trình tự. Lỗi camera có thể do quyền ứng dụng, firmware, module hoặc kết nối.\n\nTÌNH HUỐNG THỰC TẾ: Ứng dụng camera báo không truy cập được: kiểm tra quyền và xung đột ứng dụng trước khi nghi main.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Vẽ sơ đồ camera module → CSI → ISP trong SoC; thêm nhánh I2C điều khiển.",
+      "question": "MIPI CSI-2 thường truyền dữ liệu nào?",
+      "options": [
+        "Hình ảnh từ camera",
+        "Nguồn adapter",
+        "Âm thanh loa",
+        "Dữ liệu pin"
+      ],
+      "answer": 0,
+      "explain": "CSI-2 là giao diện truyền dữ liệu hình ảnh.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 63,
+      "module": 4,
+      "title": "Wi-Fi/Bluetooth/GNSS",
+      "body": "Các khối kết nối vô tuyến có thể dùng chip tích hợp hoặc module riêng; anten, đường RF và firmware đều quan trọng. Không thể suy ra IC hỏng chỉ từ việc tín hiệu yếu; cần xét môi trường, cấu hình và phần mềm.\n\nTÌNH HUỐNG THỰC TẾ: Wi-Fi yếu sau khi thay vỏ: kiểm tra cấu hình, điều kiện môi trường và khả năng ảnh hưởng anten bởi sửa chữa.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Lập bảng thử nghiệm phần mềm an toàn: khoảng cách, mạng khác, chế độ máy bay, phiên bản hệ điều hành.",
+      "question": "GNSS chủ yếu phục vụ chức năng nào?",
+      "options": [
+        "Định vị vệ tinh",
+        "Sạc nhanh",
+        "Hiển thị hình",
+        "Đo dòng"
+      ],
+      "answer": 0,
+      "explain": "GNSS là hệ thống định vị vệ tinh.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 64,
+      "module": 4,
+      "title": "Mạch RF và sóng di động",
+      "body": "Chuỗi RF có modem, transceiver, bộ lọc, khuếch đại và anten; cấu hình khác nhau theo băng tần và khu vực. Lỗi mất sóng có thể do SIM/eSIM, mạng, cấu hình, baseband, anten hoặc phần cứng. Tránh thao tác trên mạch RF khi không có thiết bị đo và hướng dẫn phù hợp.\n\nTÌNH HUỐNG THỰC TẾ: Không có dịch vụ trên một nhà mạng: thử SIM hợp lệ khác và kiểm tra vùng phủ trước khi nghi phần cứng.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Vẽ chuỗi khối modem → transceiver → front-end → anten; ghi chú các nhóm lỗi phi phần cứng.",
+      "question": "Mất sóng luôn do IC công suất RF?",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 1,
+      "explain": "Cần loại trừ SIM, cấu hình, vùng phủ và các khối khác.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 65,
+      "module": 4,
+      "title": "Cảm biến và âm thanh",
+      "body": "Cảm biến gia tốc, tiệm cận, ánh sáng và các bộ chuyển đổi âm thanh giao tiếp qua bus số/analog tùy thiết kế. Lỗi có thể do bụi, phần mềm, kết nối hoặc phần cứng. Đo kiểm phải theo tài liệu của từng model.\n\nTÌNH HUỐNG THỰC TẾ: Màn hình không tắt khi áp tai: kiểm tra kính bảo vệ, bụi và thiết lập trước khi kết luận cảm biến lỗi.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Tạo checklist kiểm tra microphone, loa, cảm biến bằng tính năng chẩn đoán chính hãng, không tháo máy.",
+      "question": "Cảm biến tiệm cận thường dùng để làm gì?",
+      "options": [
+        "Phát hiện vật ở gần",
+        "Lưu ảnh",
+        "Sạc pin",
+        "Tăng Wi-Fi"
+      ],
+      "answer": 0,
+      "explain": "Cảm biến tiệm cận phát hiện sự hiện diện của vật gần máy.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 66,
+      "module": 4,
+      "title": "Bo mạch nhiều lớp",
+      "body": "PCB smartphone có nhiều lớp đồng, via, blind/buried via tùy thiết kế và mật độ linh kiện cao. Đứt mạch, ăn mòn hoặc biến dạng cơ học có thể ảnh hưởng các kết nối bên trong. Không suy luận đường đi chỉ bằng mắt; cần boardview, schematic hoặc dữ liệu kỹ thuật đáng tin cậy.\n\nTÌNH HUỐNG THỰC TẾ: Máy mất chức năng sau rơi: phân loại lỗi cơ khí, connector và linh kiện trước khi nghi đứt lớp trong.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Quan sát ảnh PCB nhiều lớp và phân biệt trace, pad, via, ground plane; không mài hoặc khoan bo mạch.",
+      "question": "Via dùng để làm gì?",
+      "options": [
+        "Kết nối các lớp đồng",
+        "Lưu dữ liệu",
+        "Sạc pin",
+        "Đo âm thanh"
+      ],
+      "answer": 0,
+      "explain": "Via là lỗ dẫn điện kết nối các lớp mạch.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 67,
+      "module": 4,
+      "title": "Chẩn đoán không sạc",
+      "body": "Quy trình bắt đầu bằng xác nhận triệu chứng: không nhận cáp, nhận nhưng không tăng %, sạc chậm hay ngắt sạc. Loại trừ adapter, cáp, cổng, phần mềm và nhiệt trước khi nghi mạch sạc. Dùng dữ liệu từ hệ điều hành và dụng cụ đo bên ngoài được thiết kế phù hợp.\n\nTÌNH HUỐNG THỰC TẾ: Điện thoại chỉ sạc với một cáp: kiểm tra cáp và cổng trước khi kết luận IC sạc.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Lập sơ đồ quyết định gồm 5 bước: cáp → adapter → cổng → trạng thái pin/nhiệt → hỗ trợ kỹ thuật.",
+      "question": "Thử đầu tiên khi máy không sạc nên là gì?",
+      "options": [
+        "Thay PMIC",
+        "Kiểm tra cáp và adapter đạt chuẩn",
+        "Khò cổng",
+        "Cấp điện trực tiếp pin"
+      ],
+      "answer": 1,
+      "explain": "Loại trừ phụ kiện trước khi thao tác phần cứng.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 68,
+      "module": 4,
+      "title": "Chẩn đoán không lên nguồn",
+      "body": "Cần phân biệt không lên nguồn thật với máy đã chạy nhưng mất hiển thị. Xem dấu hiệu rung, chuông, máy tính nhận thiết bị, lịch sử rơi/nước và trạng thái pin. Quy trình đi từ kiểm tra không xâm lấn đến kiểm tra phần cứng bởi người có chuyên môn.\n\nTÌNH HUỐNG THỰC TẾ: Máy không sáng nhưng vẫn đổ chuông: ưu tiên nhánh hiển thị hơn là nhánh mất nguồn hoàn toàn.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Lập bảng triệu chứng và giả thuyết: rung/không rung, máy tính nhận/không nhận, màn hình có/không.",
+      "question": "Máy đổ chuông nhưng màn đen chứng minh điều gì?",
+      "options": [
+        "Có khả năng hệ thống vẫn hoạt động",
+        "Chắc chắn PMIC chết",
+        "Chắc chắn UFS hỏng",
+        "Pin bằng 0V"
+      ],
+      "answer": 0,
+      "explain": "Đó là dấu hiệu thiết bị vẫn có chức năng hoạt động.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 69,
+      "module": 4,
+      "title": "Chẩn đoán treo logo",
+      "body": "Bootloop có thể do ứng dụng, cập nhật lỗi, bộ nhớ đầy, firmware, pin, nhiệt hoặc phần cứng. Ưu tiên phương án giữ dữ liệu và quy trình phục hồi chính hãng; reset hoặc flash có thể xóa dữ liệu. Không tự ý can thiệp các cơ chế bảo mật thiết bị.\n\nTÌNH HUỐNG THỰC TẾ: Máy treo logo sau cập nhật: ghi lại bản cập nhật, thời điểm phát sinh và thông báo lỗi trước khi cân nhắc phục hồi.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Viết checklist thu thập thông tin: backup, phiên bản hệ điều hành, lịch sử cập nhật, log có sẵn và mức độ ưu tiên dữ liệu.",
+      "question": "Flash firmware có thể gây điều gì?",
+      "options": [
+        "Mất dữ liệu",
+        "Tăng dung lượng RAM",
+        "Sửa mọi lỗi main",
+        "Không có rủi ro"
+      ],
+      "answer": 0,
+      "explain": "Một số thao tác phục hồi có thể xóa dữ liệu.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 70,
+      "module": 4,
+      "title": "Case study smartphone",
+      "body": "Tình huống: máy nhận sạc chập chờn, đôi khi không hiện biểu tượng sạc, pin tụt nhanh. Phân nhóm giả thuyết: phụ kiện, cổng, phần mềm, nhiệt, pin hoặc mạch sạc. Xác nhận từng giả thuyết bằng bằng chứng thay vì thay linh kiện theo cảm tính. Ghi lại triệu chứng, phép thử, kết quả và bước tiếp theo.\n\nTÌNH HUỐNG THỰC TẾ: Sau khi đổi cáp đạt chuẩn và làm sạch cổng theo hướng dẫn hãng, sạc ổn định: chưa có bằng chứng cần thay PMIC.\n\nLƯU Ý: Đây là kiến thức tổng quan, thông số và vị trí chân phải đối chiếu tài liệu chính hãng theo từng model.",
+      "practice": "Soạn phiếu chẩn đoán gồm hiện tượng, điều kiện tái hiện, kiểm tra không xâm lấn, kết quả và khuyến nghị.",
+      "question": "Điều nào thể hiện chẩn đoán có hệ thống?",
+      "options": [
+        "Thay IC ngay",
+        "Kiểm tra từng giả thuyết và ghi bằng chứng",
+        "Dựa vào một video",
+        "Đoán theo nhiệt"
+      ],
+      "answer": 1,
+      "explain": "Chẩn đoán tốt dựa trên các phép kiểm chứng và hồ sơ lỗi.",
+      "status": "Bài học mở rộng – chưa kiểm chứng theo model cụ thể",
+      "updated": "2026-10-30",
+      "sources": [],
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "case_study": "Tình huống: thiết bị có triệu chứng liên quan chủ đề bài học. Hãy ghi 2 giả thuyết, 2 phép kiểm tra không phá hủy và thông tin còn thiếu trước khi kết luận.",
+      "case_solution": "Cần xác minh model, trạng thái nguồn, dữ kiện đo, sơ đồ đúng mã và điều kiện kiểm tra. Không kết luận linh kiện hỏng từ một triệu chứng đơn lẻ.",
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 71,
+      "module": 5,
+      "title": "Thiết lập bàn sửa ESD",
+      "body": "Điện tích tĩnh có thể gây lỗi tức thời hoặc suy giảm linh kiện nhạy ESD. Phân biệt dây đeo tay ESD, thảm ESD, điểm nối đất bảo vệ và bề mặt cách điện. ESD không thay thế biện pháp an toàn điện. Trước khi nhận máy: ghi nhận tình trạng, chụp ảnh với sự đồng ý, lưu vị trí ốc và tháo nguồn theo quy trình của hãng. Không mở bộ nguồn AC, pin lithium hoặc thiết bị có nguy cơ tích điện.",
+      "practice": "Quan sát một bàn làm việc đã ngắt điện: xác định vùng ESD, khay ốc, nơi để bo mạch và nhãn phân loại. Vẽ bố trí bàn theo 3 vùng: tiếp nhận, kiểm tra, lưu linh kiện.",
+      "question": "Dây đeo ESD có thay thế việc ngắt nguồn không?",
+      "options": [
+        "Không, hai biện pháp khác mục đích",
+        "Có, luôn an toàn",
+        "Chỉ khi đeo găng",
+        "Chỉ với laptop"
+      ],
+      "answer": 0,
+      "explain": "ESD bảo vệ linh kiện khỏi phóng tĩnh điện, không bảo đảm an toàn điện.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Một bo mạch đã tắt nguồn được đặt lên túi nhựa thông thường. Hãy nêu nguy cơ và cách tổ chức nơi đặt bo phù hợp.",
+      "case_solution": "Đánh giá nguy cơ ESD, xác nhận nguồn đã tách, bố trí bề mặt ESD được kiểm định; không suy diễn dây ESD là bảo vệ chống điện giật.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 72,
+      "module": 5,
+      "title": "Đo diode mode và resistance",
+      "body": "Chế độ Ω đo điện trở tương đương bằng dòng thử nhỏ; chế độ diode hiển thị điện áp rơi theo điều kiện đo của đồng hồ. Khi đo trên bo, nhiều nhánh song song có thể làm kết quả khác linh kiện rời. Đường nguồn CPU có thể có điện trở thấp tự nhiên. Không kết luận chập chỉ từ tiếng bíp. Phân biệt đo tại mạch đã mất điện với đo điện áp khi mạch có điện.",
+      "practice": "Dùng điện trở rời 1kΩ và diode rời không kết nối nguồn. Ghi kết quả Ω, diode theo hai chiều và model đồng hồ; so sánh với dự đoán.",
+      "question": "Vì sao số đo diode trên bo có thể khác khi đo linh kiện rời?",
+      "options": [
+        "Do các nhánh mạch song song",
+        "Vì luôn hỏng IC",
+        "Do điện áp adapter",
+        "Vì đồng hồ không dùng được"
+      ],
+      "answer": 0,
+      "explain": "Đường đo có thể đi qua các linh kiện khác.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Đường VCORE đo được trở kháng thấp, trong khi đường 3.3V cao hơn. Có đủ căn cứ xác định chập không?",
+      "case_solution": "Chưa. Cần sơ đồ, loại rail, điều kiện đo, tham chiếu bo tương đương và nhiều phép kiểm tra không phá hủy.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 73,
+      "module": 5,
+      "title": "Phân tích nguồn bằng sơ đồ",
+      "body": "Bắt đầu từ triệu chứng, xác định nguồn cấp, đường power-path, rail always-on và rail switched. Trong schematic, tìm VIN, EN, PG, FB và GND, nhưng tên net và thứ tự phụ thuộc nền tảng. Lập bảng điều kiện trước khi đo: nguồn đầu vào có mặt chưa, tín hiệu kích hoạt có chưa, điều kiện ngủ/thức là gì. Dùng datasheet và service manual đúng mã bo; không áp trị số của model khác.",
+      "practice": "Trên sơ đồ mẫu bằng giấy, tô ba loại net: nguồn đầu vào, enable và power-good. Vẽ cây giả thuyết nếu một rail vắng mặt mà EN cũng thấp.",
+      "question": "Rail 0V và EN=0V cho phép kết luận điều gì?",
+      "options": [
+        "Rail có thể chưa được cho phép hoạt động",
+        "Chắc chắn IC nguồn hỏng",
+        "Chắc chắn tụ chập",
+        "Chắc chắn CPU hỏng"
+      ],
+      "answer": 0,
+      "explain": "EN thấp thường là điều kiện cần được kiểm tra trước khi kết luận IC.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Laptop không lên nguồn, nguồn chờ vắng mặt. Hãy liệt kê 4 nhóm dữ liệu cần xác nhận trước khi thay IC.",
+      "case_solution": "Adapter/đường cấp, trạng thái enable, sơ đồ chính xác, tình trạng đo trên rail và tiền sử máy.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 74,
+      "module": 5,
+      "title": "Dùng nguồn DC có giới hạn dòng",
+      "body": "Nguồn DC bàn có chế độ điện áp không đổi (CV) và giới hạn dòng (CC). Giới hạn dòng là cơ chế giảm rủi ro chứ không bảo đảm an toàn tuyệt đối. Dòng tiêu thụ thay đổi theo trạng thái hoạt động; không có một ngưỡng chuẩn áp dụng cho mọi bo. Tránh cấp điện trực tiếp vào pin lithium, đầu nối không xác định hoặc đường nguồn trên mainboard nếu chưa có người hướng dẫn và tài liệu đúng model.",
+      "practice": "Thực hành mô phỏng bằng tính toán: nguồn 5V, điện trở tải 1kΩ sẽ tiêu thụ khoảng 5mA. Trên nguồn DC chưa nối tải, nhận diện màn hình hiển thị V/A và các nút điều chỉnh bằng tài liệu hướng dẫn.",
+      "question": "Nguồn đặt 5V, tải 1kΩ lý tưởng, dòng dự kiến là?",
+      "options": [
+        "5mA",
+        "5A",
+        "500mA",
+        "50A"
+      ],
+      "answer": 0,
+      "explain": "I=V/R=5/1000 A.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Một nguồn hiển thị CC ngay khi nối tải chưa rõ đặc tính. Điều gì cần làm trước khi tiếp tục?",
+      "case_solution": "Dừng, ngắt nguồn, xác nhận đúng kết nối, đặc tính tải và cấu hình nguồn; không tăng giới hạn dòng để thử may rủi.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 75,
+      "module": 5,
+      "title": "Quan sát tín hiệu với oscilloscope",
+      "body": "Máy hiện sóng hiển thị biên độ theo thời gian. Các thông số cần hiểu: volts/div, time/div, coupling, bandwidth, probe attenuation và giới hạn điện áp. Kẹp mass của nhiều oscilloscope để bàn nối đất bảo vệ; nối sai có thể gây chập nguy hiểm. Không dùng máy hiện sóng trên nguồn AC, adapter mở vỏ hay thiết bị không rõ điểm tham chiếu.",
+      "practice": "Quan sát ảnh chụp sóng vuông mẫu hoặc chế độ demo do hãng cung cấp. Tính chu kỳ và tần số từ 5 ô thời gian nếu time/div=2ms.",
+      "question": "Một chu kỳ dài 10ms tương ứng tần số bao nhiêu?",
+      "options": [
+        "100Hz",
+        "10Hz",
+        "1kHz",
+        "1000kHz"
+      ],
+      "answer": 0,
+      "explain": "f=1/T=1/0,01s=100Hz.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Đường tín hiệu reset có xung ngắn. Cần ghi nhận những thông tin nào để so sánh?",
+      "case_solution": "Thời điểm trigger, thang thời gian, thang điện áp, loại probe, trạng thái nguồn và điều kiện đo.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 76,
+      "module": 5,
+      "title": "Hàn linh kiện SMD an toàn",
+      "body": "Linh kiện SMD có nhiều loại package như 0402, 0603, QFN, BGA. Lỗi thường gặp gồm cầu hàn, pad bong, linh kiện lệch, nứt mối hàn và tác động nhiệt tới linh kiện lân cận. Nhiệt độ và thời gian gia nhiệt phụ thuộc hợp kim, thiết bị và cấu trúc PCB; không dùng một cấu hình nhiệt chung. Hàn/khò cần người có chuyên môn giám sát, thông gió phù hợp và bảo vệ mắt. Không gia nhiệt pin lithium.",
+      "practice": "Trên ảnh bo mạch hoặc bo mẫu nguội, nhận diện 5 linh kiện SMD và ghi package nếu xác định được. Quan sát ảnh mối hàn đạt/chưa đạt; chưa cần bật máy hàn.",
+      "question": "Vì sao không dùng cùng một nhiệt độ khò cho mọi bo?",
+      "options": [
+        "Cấu trúc PCB, hợp kim và linh kiện khác nhau",
+        "Vì mọi IC giống nhau",
+        "Vì nhiệt độ không ảnh hưởng",
+        "Vì kích thước không quan trọng"
+      ],
+      "answer": 0,
+      "explain": "Quá trình hàn cần dựa trên vật liệu, thiết bị và tài liệu công nghệ.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Một pad nhỏ bị bong sau sửa. Hãy nêu thông tin cần báo cáo thay vì tiếp tục gia nhiệt.",
+      "case_solution": "Vị trí pad, ảnh hiện trạng, chức năng net theo schematic và đánh giá khả năng phục hồi bởi người có chuyên môn.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 77,
+      "module": 5,
+      "title": "Làm sạch và kiểm tra sau sửa",
+      "body": "Quy trình QC gồm quan sát dưới phóng đại, kiểm tra vật lạ/cầu hàn, kiểm tra đầu nối và ghi nhận các phép đo so sánh trước/sau. Dung môi làm sạch phải tương thích vật liệu, theo SDS và quy định an toàn; không dùng tùy tiện với màn hình, keo, pin. Kiểm tra chức năng cần bao gồm sạc, hiển thị, bàn phím, cổng, nhiệt độ và tính ổn định tùy loại thiết bị.",
+      "practice": "Soạn checklist QC 10 mục cho laptop giả lập; đánh dấu N/A với mục không áp dụng. Chỉ thực hành kiểm tra ngoại quan trên thiết bị đã ngắt nguồn.",
+      "question": "Điều nào là bằng chứng QC tốt nhất?",
+      "options": [
+        "Có checklist, điều kiện và kết quả đo cụ thể",
+        "Chỉ ghi máy OK",
+        "Chỉ chụp một ảnh",
+        "Chỉ đo một rail"
+      ],
+      "answer": 0,
+      "explain": "QC phải truy vết được điều kiện, thao tác và kết quả.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Máy bật được nhưng cổng USB-C chưa được kiểm tra. Có thể kết luận QC toàn diện chưa?",
+      "case_solution": "Chưa; cần phân biệt các chức năng đã kiểm và chưa kiểm, không đánh dấu pass cho mục chưa thử.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 78,
+      "module": 5,
+      "title": "Quy trình tiếp nhận và bảo mật",
+      "body": "Thông tin cần ghi khi nhận máy: model, serial nếu khách đồng ý, triệu chứng, phụ kiện, lịch sử sửa, tình trạng ngoại quan và quyền truy cập dữ liệu. Chỉ truy cập dữ liệu cần thiết, có sự đồng ý rõ ràng; không yêu cầu mật khẩu khi không cần. Ưu tiên sao lưu dữ liệu bởi chủ máy trước sửa. Với thiết bị doanh nghiệp, tuân thủ chính sách IT và mã hóa thiết bị.",
+      "practice": "Tạo phiếu tiếp nhận giả lập gồm 8 trường, kèm ô đồng ý cho phép kiểm tra và mô tả phạm vi truy cập dữ liệu.",
+      "question": "Điều nào phù hợp nguyên tắc bảo mật?",
+      "options": [
+        "Chỉ truy cập dữ liệu cần thiết và được cho phép",
+        "Sao chép toàn bộ dữ liệu về máy cá nhân",
+        "Yêu cầu mọi mật khẩu",
+        "Bỏ qua sự đồng ý"
+      ],
+      "answer": 0,
+      "explain": "Nguyên tắc tối thiểu hóa dữ liệu giúp giảm rủi ro.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Máy của khách có dữ liệu cá nhân nhưng chưa có đồng ý truy cập. Kỹ thuật viên nên làm gì?",
+      "case_solution": "Dừng thao tác liên quan dữ liệu, xin phép rõ ràng hoặc chỉ kiểm tra phần cứng không cần truy cập dữ liệu.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 79,
+      "module": 5,
+      "title": "Báo cáo ca sửa và QC",
+      "body": "Báo cáo sửa chữa nên tách: triệu chứng khách báo, quan sát thực tế, giả thuyết, phép thử, kết quả, kết luận và khuyến nghị. Ghi phiên bản firmware, model bo, dụng cụ đo và điều kiện thử khi phù hợp. Không biến suy đoán thành kết luận. Đánh dấu giới hạn kiểm tra và linh kiện chưa xác minh.",
+      "practice": "Viết báo cáo giả lập cho laptop không sạc: khách báo, tình trạng ngoại quan, thông tin adapter, kết quả kiểm tra chưa cấp nguồn, hạng mục chưa thực hiện.",
+      "question": "Câu nào là kết luận dựa trên chứng cứ?",
+      "options": [
+        "Đo tại điểm X theo điều kiện Y cho kết quả Z",
+        "Chắc chắn IC hỏng vì máy không lên",
+        "Thay CPU thử may",
+        "Không cần ghi phép đo"
+      ],
+      "answer": 0,
+      "explain": "Báo cáo phải tách quan sát với suy luận.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Hai kỹ thuật viên có kết quả đo khác nhau. Cần so sánh những biến nào?",
+      "case_solution": "Thang đo, điểm tham chiếu, trạng thái thiết bị, model bo, dụng cụ và phiên bản firmware.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    },
+    {
+      "id": 80,
+      "module": 5,
+      "title": "Đồ án cuối khóa",
+      "body": "Đồ án đánh giá năng lực hệ thống: tiếp nhận ca, nhận diện rủi ro, đọc schematic/boardview đúng mã, lập giả thuyết, chọn phép kiểm tra không phá hủy, tổng hợp chứng cứ và báo cáo QC. Không chấm điểm dựa vào việc thay được nhiều linh kiện; ưu tiên chẩn đoán có lý lẽ, an toàn và bảo vệ dữ liệu.",
+      "practice": "Case mô phỏng: laptop nhận adapter nhưng không sạc, máy vẫn khởi động. Lập bảng 5 giả thuyết, bằng chứng cần thu thập, thứ tự kiểm tra không phá hủy, các điểm phải dừng và xin hướng dẫn.",
+      "question": "Trong đồ án, bước nào cần làm trước thay linh kiện?",
+      "options": [
+        "Xác minh triệu chứng và bằng chứng đo",
+        "Khò IC ngay",
+        "Tăng dòng nguồn",
+        "Xóa dữ liệu"
+      ],
+      "answer": 0,
+      "explain": "Chẩn đoán có hệ thống giúp tránh thay linh kiện không cần thiết.",
+      "status": "Bài học nâng cao – có tình huống chẩn đoán",
+      "updated": "2026-10-30",
+      "sources": [],
+      "case_study": "Hãy lập báo cáo 1 trang: triệu chứng, 3 giả thuyết, 3 phép kiểm tra an toàn, điều kiện dừng, tiêu chí QC.",
+      "case_solution": "Báo cáo đạt khi phân biệt quan sát/giả thuyết, nêu phép thử phù hợp, tránh cấp nguồn tùy tiện và bảo vệ dữ liệu.",
+      "objectives": [
+        "Giải thích được khái niệm cốt lõi của bài",
+        "Phân biệt dữ kiện quan sát và giả thuyết chẩn đoán",
+        "Chỉ ra giới hạn áp dụng theo từng model"
+      ],
+      "review_checklist": [
+        "Đã hiểu nguyên lý và thuật ngữ",
+        "Đã ghi rõ điều kiện đo hoặc điều kiện mô phỏng",
+        "Đã nhận diện rủi ro và giới hạn kết luận"
+      ],
+      "source_review": "Chưa đối chiếu tài liệu hãng cho model cụ thể"
+    }
+  ]
+}
